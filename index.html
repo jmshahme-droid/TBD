@@ -110,6 +110,25 @@ p{margin-bottom:1rem;color:var(--ink2)}
 .out .fl{display:none}.out .smoke{animation:smk 3s ease-out forwards}
 @keyframes smk{0%{opacity:.7;transform:translateY(0)}100%{opacity:0;transform:translateY(-22px)}}
 .lit .st{opacity:1!important;filter:drop-shadow(0 0 5px rgba(213,182,106,.95))}
+.tr{overflow:hidden;position:relative;width:100%;max-width:30rem;height:100%;margin:0 auto;padding:0}
+.tb{position:relative;width:100%;height:100%;container-type:size}
+.screen.active .tr>.tb{animation:fin .9s ease both}
+.tb svg.ts{position:absolute;inset:0;width:100%;height:100%;overflow:hidden}
+.tb path{vector-effect:non-scaling-stroke;fill:none;stroke-linecap:round}
+.tk{stroke:#A88F6A}.tkg{stroke:#D5B66A;opacity:.7}.bc{stroke:#A88F6A;stroke-width:3.5}
+.lf{position:absolute;transform:translate(-50%,-50%);z-index:2}
+.lf figure{display:block;background:var(--white);padding:5px 5px 7px;border:1px solid #efe6d6;box-shadow:0 8px 20px rgba(80,60,40,.2);rotate:var(--rot,-2deg)}
+.lf img{display:block;width:auto;height:auto;object-fit:contain;max-width:32vw;max-height:19vh;max-width:34cqw;max-height:22cqh}
+.lf .ph{display:none;width:30vw;width:30cqw;aspect-ratio:3/4;max-height:22cqh;background:var(--cream);color:#9b8c7f;font-family:var(--sans);font-size:.7rem;text-align:center;align-items:center;justify-content:center}
+.lf.no img{display:none}.lf.no .ph{display:flex}
+.screen.active .lf figure{animation:lf .9s ease both;animation-delay:var(--d,.4s)}
+@keyframes lf{from{opacity:0;scale:.7}to{opacity:1;scale:1}}
+.tl{position:absolute;left:0;right:0;top:3%;text-align:center;z-index:3;padding:0 10px}
+.tl .q{font-size:1.25rem;margin:.2rem 0 0}
+.tl p{display:inline-block;background:rgba(251,247,239,.95);padding:2px 14px;border-radius:99px}
+.tg{position:absolute;width:11px;height:11px;margin:-5px;color:var(--gold2);animation:tw 4s ease-in-out infinite;z-index:1}
+.tgl{position:absolute;left:50%;top:11%;width:46cqw;height:46cqw;margin:-23cqw 0 0 -23cqw;border-radius:50%;background:radial-gradient(circle,rgba(213,182,106,.35),transparent 68%);animation:pu 6s ease-in-out infinite}
+.tgl+.tg{width:26px;height:26px;margin:-13px;top:11%;left:50%;color:var(--gold)}
 button:focus-visible{outline:3px solid var(--blue2);outline-offset:3px}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.st{display:none}}
 </style>
@@ -121,7 +140,7 @@ button:focus-visible{outline:3px solid var(--blue2);outline-offset:3px}
 
 <div id="app">
 <div id="fx" aria-hidden="true"></div>
-<div id="top"><div id="cnt" aria-live="polite">01 / 24</div><div id="trk"><div id="bar"></div></div></div>
+<div id="top"><div id="cnt" aria-live="polite">01 / 28</div><div id="trk"><div id="bar"></div></div></div>
 <button id="mus" aria-label="Mute or unmute music">♪</button>
 <audio id="aud" src="music.mp3" loop preload="auto"></audio>
 
@@ -248,7 +267,7 @@ button:focus-visible{outline:3px solid var(--blue2);outline-offset:3px}
 <!-- 10 photo -->
 <section class="screen bg1"><div class="in">
 <p class="sm">a memory</p>
-<figure class="photo"><img src="memory-1.jpg" alt="A special memory of Trusha and me" onerror="this.parentNode.classList.add('no')"><div class="ph">Put your photo at memory-1.jpg</div></figure>
+<figure class="photo"><img src="memory-1.jpeg" alt="A special memory of Trusha and me" onerror="this.parentNode.classList.add('no')"><div class="ph">Put your photo at memory-1.jpeg</div></figure>
 <p>Meeting randomly through Durva and now we have reached here. I am always here to do 'PANCHATTT' of how your day was. I don't care whoever thinks whatever about me, the person who really matter is you and you understand me, that is enough for me. And yes a gentle reminder, I am afraid of your thappad in which hu akhu bhuj fari avis. 😄</p>
 </div></section>
 
@@ -273,6 +292,15 @@ button:focus-visible{outline:3px solid var(--blue2);outline-offset:3px}
 <p class="q" style="margin:0">Sometimes it's just walking somewhere, talking, and spending time together.</p>
 </div>
 </div></section>
+
+<!-- photo tree: 4 pages, trunk continues from page to page -->
+<section class="screen"><div class="in tr"><div class="tb"><svg class="ts" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="50" cy="100" rx="70" ry="9" fill="#EFE3CB"/><path class="bc" style="stroke-width:5" d="M50 90 C 46 95,40 97,34 100"/><path class="bc" style="stroke-width:5" d="M50 90 C 54 95,60 97,66 100"/><path class="bc" d="M50 49 C 37.5 49, 37.5 40, 25 40"/><path class="bc" d="M50 75 C 62.5 75, 62.5 66, 75 66"/><path class="tk" style="stroke-width:9" d="M50 92 C 50 80, 56 66, 50 50 S 50 16, 50 0"/><path class="tkg" style="stroke-width:1.5" d="M50 92 C 50 80, 56 66, 50 50 S 50 16, 50 0" transform="translate(-1,0)"/></svg><svg class="tg" style="left:18%;top:18%;animation-delay:-1s"><use href="#star"/></svg><svg class="tg" style="left:84%;top:30%;animation-delay:-2s"><use href="#star"/></svg><svg class="tg" style="left:38%;top:86%;animation-delay:-3s"><use href="#star"/></svg><div class="tl"><p class="sm">a little tree</p><p class="q">One leaf at a time.</p></div><div class="lf" style="left:25%;top:40%;--rot:-3deg;--d:0.5s"><figure><img src="memory-1.jpeg" alt="Trusha, photo 1" onerror="this.parentNode.parentNode.classList.add('no')"><div class="ph">memory-1.jpeg</div></figure></div><div class="lf" style="left:75%;top:66%;--rot:2deg;--d:0.75s"><figure><img src="memory-2.jpeg" alt="Trusha, photo 2" onerror="this.parentNode.parentNode.classList.add('no')"><div class="ph">memory-2.jpeg</div></figure></div></div></div></section>
+
+<section class="screen"><div class="in tr"><div class="tb"><svg class="ts" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path class="bc" d="M50 29 C 37.5 29, 37.5 20, 25 20"/><path class="bc" d="M50 57 C 62.5 57, 62.5 48, 75 48"/><path class="bc" d="M50 85 C 37.5 85, 37.5 76, 25 76"/><path class="tk" style="stroke-width:8" d="M50 100 C 50 84, 56 68, 50 52 S 50 16, 50 0"/><path class="tkg" style="stroke-width:1.5" d="M50 100 C 50 84, 56 68, 50 52 S 50 16, 50 0" transform="translate(-1,0)"/></svg><svg class="tg" style="left:86%;top:16%;animation-delay:-1s"><use href="#star"/></svg><svg class="tg" style="left:14%;top:56%;animation-delay:-2s"><use href="#star"/></svg><svg class="tg" style="left:80%;top:86%;animation-delay:-3s"><use href="#star"/></svg><div class="lf" style="left:25%;top:20%;--rot:-2deg;--d:0.5s"><figure><img src="memory-3.jpeg" alt="Trusha, photo 3" onerror="this.parentNode.parentNode.classList.add('no')"><div class="ph">memory-3.jpeg</div></figure></div><div class="lf" style="left:75%;top:48%;--rot:3deg;--d:0.75s"><figure><img src="memory-4.jpeg" alt="Trusha, photo 4" onerror="this.parentNode.parentNode.classList.add('no')"><div class="ph">memory-4.jpeg</div></figure></div><div class="lf" style="left:25%;top:76%;--rot:-3deg;--d:1.0s"><figure><img src="memory-5.jpeg" alt="Trusha, photo 5" onerror="this.parentNode.parentNode.classList.add('no')"><div class="ph">memory-5.jpeg</div></figure></div></div></div></section>
+
+<section class="screen"><div class="in tr"><div class="tb"><svg class="ts" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path class="bc" d="M50 29 C 62.5 29, 62.5 20, 75 20"/><path class="bc" d="M50 57 C 37.5 57, 37.5 48, 25 48"/><path class="bc" d="M50 85 C 62.5 85, 62.5 76, 75 76"/><path class="tk" style="stroke-width:7" d="M50 100 C 50 84, 44 68, 50 52 S 50 16, 50 0"/><path class="tkg" style="stroke-width:1.5" d="M50 100 C 50 84, 44 68, 50 52 S 50 16, 50 0" transform="translate(-1,0)"/></svg><svg class="tg" style="left:14%;top:14%;animation-delay:-1s"><use href="#star"/></svg><svg class="tg" style="left:88%;top:52%;animation-delay:-2s"><use href="#star"/></svg><svg class="tg" style="left:18%;top:88%;animation-delay:-3s"><use href="#star"/></svg><div class="lf" style="left:75%;top:20%;--rot:2deg;--d:0.5s"><figure><img src="memory-6.jpeg" alt="Trusha, photo 6" onerror="this.parentNode.parentNode.classList.add('no')"><div class="ph">memory-6.jpeg</div></figure></div><div class="lf" style="left:25%;top:48%;--rot:-3deg;--d:0.75s"><figure><img src="memory-7.jpeg" alt="Trusha, photo 7" onerror="this.parentNode.parentNode.classList.add('no')"><div class="ph">memory-7.jpeg</div></figure></div><div class="lf" style="left:75%;top:76%;--rot:3deg;--d:1.0s"><figure><img src="memory-8.jpeg" alt="Trusha, photo 8" onerror="this.parentNode.parentNode.classList.add('no')"><div class="ph">memory-8.jpeg</div></figure></div></div></div></section>
+
+<section class="screen"><div class="in tr"><div class="tb"><svg class="ts" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path class="bc" d="M50 42 C 37.5 42, 37.5 33, 25 33"/><path class="bc" d="M50 64 C 62.5 64, 62.5 55, 75 55"/><path class="bc" d="M50 86 C 37.5 86, 37.5 77, 25 77"/><path class="tk" style="stroke-width:6" d="M50 100 C 50 84, 56 68, 50 52 S 50 28, 50 12"/><path class="tkg" style="stroke-width:1.5" d="M50 100 C 50 84, 56 68, 50 52 S 50 28, 50 12" transform="translate(-1,0)"/></svg><div class="tgl"></div><svg class="tg"><use href="#star"/></svg><svg class="tg" style="left:84%;top:20%;animation-delay:-1s"><use href="#star"/></svg><svg class="tg" style="left:12%;top:50%;animation-delay:-2s"><use href="#star"/></svg><svg class="tg" style="left:86%;top:84%;animation-delay:-3s"><use href="#star"/></svg><div class="tl" style="top:2%"><p class="sm">and it keeps growing…</p></div><div class="lf" style="left:25%;top:33%;--rot:-2deg;--d:0.5s"><figure><img src="memory-9.jpeg" alt="Trusha, photo 9" onerror="this.parentNode.parentNode.classList.add('no')"><div class="ph">memory-9.jpeg</div></figure></div><div class="lf" style="left:75%;top:55%;--rot:3deg;--d:0.75s"><figure><img src="memory-10.jpeg" alt="Trusha, photo 10" onerror="this.parentNode.parentNode.classList.add('no')"><div class="ph">memory-10.jpeg</div></figure></div><div class="lf" style="left:25%;top:77%;--rot:-3deg;--d:1.0s"><figure><img src="memory-11.jpeg" alt="Trusha, photo 11" onerror="this.parentNode.parentNode.classList.add('no')"><div class="ph">memory-11.jpeg</div></figure></div></div></div></section>
 
 <!-- 13 -->
 <section class="screen" style="background:linear-gradient(var(--ivory),#F3E9E8)"><div class="in l">
@@ -307,7 +335,7 @@ button:focus-visible{outline:3px solid var(--blue2);outline-offset:3px}
 <section class="screen bg3"><div class="in">
 <p class="sm">okay, one silly thing</p>
 <h2>Okay, Devi Ji… Bahot serious ho liya</h2>
-<div class="vid"><video id="vid" controls playsinline preload="metadata" src="birthday-meme.mp4" onerror="this.parentNode.classList.add('no')"></video><div class="ph">Put your video at assets/birthday-meme.mp4</div></div>
+<div class="vid"><video id="vid" controls playsinline preload="metadata" src="birthday-meme.mp4" onerror="this.parentNode.classList.add('no')"></video><div class="ph">Put your video at birthday-meme.mp4</div></div>
 <p>Because a birthday without something silly isn't really a birthday.</p>
 </div></section>
 
@@ -368,7 +396,7 @@ button:focus-visible{outline:3px solid var(--blue2);outline-offset:3px}
 
 <!-- 20 photo -->
 <section class="screen bg3"><div class="in">
-<figure class="photo"><img src="memory-2.jpg" alt="Trusha, on her birthday" onerror="this.parentNode.classList.add('no')"><div class="ph">Put your photo at assets/memory-2.jpg</div></figure>
+<figure class="photo"><img src="memory-2.jpeg" alt="Trusha, on her birthday" onerror="this.parentNode.classList.add('no')"><div class="ph">Put your photo at memory-2.jpeg</div></figure>
 <div class="cand"><button class="gbtn" id="candle" aria-label="Make a wish and blow out the candle"><svg viewBox="0 0 60 120"><g class="fl halo"><path d="M30 6c6 8 8 13 5 18-1.5 2.5-3 3.2-5 3.2s-3.5-.7-5-3.2c-3-5-1-10 5-18z" fill="#E9C46A"/><path d="M30 14c2.5 4 3 6.5 1.5 9-.8 1-2.2 1-3 0-1.5-2.500-1-5 1.5-9z" fill="#FFF6D8"/></g><path class="smoke" d="M30 24q-7-7 0-13t0-11" fill="none" stroke="#9b8c7f" stroke-width="2" stroke-linecap="round"/><path d="M30 27v8" stroke="#554B46" stroke-width="2" stroke-linecap="round"/><rect x="19" y="35" width="22" height="66" rx="4" fill="#FFFDF8" stroke="#D5B66A" stroke-width="1.5"/><path d="M19 50h22M19 58h22" stroke="#E8C9CC" stroke-width="3"/><ellipse cx="30" cy="104" rx="26" ry="6" fill="#D5B66A"/></svg></button></div>
 <p class="sm">make a wish, then tap the candle</p>
 <p class="q" id="wishTxt" aria-live="polite" style="min-height:2rem;margin:.4rem 0 1rem"></p>
